@@ -1,0 +1,22 @@
+"nsis": {
+  "oneClick": false,
+  "perMachine": true,
+  "allowToChangeInstallationDirectory": true
+},
+"win": {
+  "target": "nsis",
+  "requestedExecutionLevel": "requireAdministrator"
+},
+"publish": {
+  "provider": "github",
+  "owner": "your-github-username",
+  "repo": "your-github-repo"
+},
+"codesign": {
+  "windows": {
+    "certificateFile": "G:\toos\winCodeSign-2.6.0",
+    "password": "your-password",
+    "timeStampServer": "http://timestamp.digicert.com",
+    "digestAlgorithm": "sha256"
+  }
+}

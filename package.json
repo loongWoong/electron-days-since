@@ -1,0 +1,45 @@
+{
+    "name": "electron-days-since",
+    "author": "loongWoong",
+    "version": "1.0.0",
+    "description": "Electron app to display days since 2017-07-16",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder"
+    },
+    "devDependencies": {
+        "electron": "^25.1.0",
+        "electron-builder": "24.6.0"
+    },
+    "build": {
+        "appId": "com.yourcompany.electron-days-since",
+        "productName": "Days Since",
+        "directories": {
+            "output": "release"
+        },
+        "extraFiles": [
+            {
+              "from": "days_since.py",
+              "to": "."
+            }
+          ],
+        "nsis": {
+            "oneClick": false,
+            "perMachine": false,
+            "allowElevation": true,
+            "createDesktopShortcut": true,
+            "shortcutName": "Days Since"
+        },
+        "win": {
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ]
+        }
+    }
+}
